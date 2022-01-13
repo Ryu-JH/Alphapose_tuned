@@ -1,0 +1,594 @@
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+############# Starting Epoch 0 | LR: 0.001 #############
+Train-0 epoch | loss:0.00084178 | acc:0.4592
+############# Starting Epoch 1 | LR: 0.001 #############
+Train-1 epoch | loss:0.00063701 | acc:0.6382
+##### Epoch 1 | gt mAP: 0.42899165792401994 | rcnn mAP: 0.4167108906406261 #####
+############# Starting Epoch 2 | LR: 0.001 #############
+Train-2 epoch | loss:0.00062722 | acc:0.6432
+############# Starting Epoch 3 | LR: 0.001 #############
+Train-3 epoch | loss:0.00055711 | acc:0.6975
+##### Epoch 3 | gt mAP: 0.4958563459426117 | rcnn mAP: 0.4772272364396629 #####
+############# Starting Epoch 4 | LR: 0.001 #############
+Train-4 epoch | loss:0.00053473 | acc:0.7147
+############# Starting Epoch 5 | LR: 0.001 #############
+Train-5 epoch | loss:0.00051498 | acc:0.7288
+##### Epoch 5 | gt mAP: 0.5393673454737155 | rcnn mAP: 0.523346441568443 #####
+############# Starting Epoch 6 | LR: 0.001 #############
+Train-6 epoch | loss:0.00049947 | acc:0.7395
+############# Starting Epoch 7 | LR: 0.001 #############
+Train-7 epoch | loss:0.00048645 | acc:0.7494
+##### Epoch 7 | gt mAP: 0.5685316339492268 | rcnn mAP: 0.5536379176450528 #####
+############# Starting Epoch 8 | LR: 0.001 #############
+Train-8 epoch | loss:0.00047599 | acc:0.7571
+############# Starting Epoch 9 | LR: 0.001 #############
+Train-9 epoch | loss:0.00046578 | acc:0.7643
+##### Epoch 9 | gt mAP: 0.5828189013186154 | rcnn mAP: 0.5625903122776488 #####
+############# Starting Epoch 10 | LR: 0.001 #############
+Train-10 epoch | loss:0.00045962 | acc:0.7687
+############# Starting Epoch 11 | LR: 0.001 #############
+Train-11 epoch | loss:0.00045140 | acc:0.7748
+##### Epoch 11 | gt mAP: 0.5981341315462428 | rcnn mAP: 0.5791373999788911 #####
+############# Starting Epoch 12 | LR: 0.001 #############
+Train-12 epoch | loss:0.00044494 | acc:0.7791
+############# Starting Epoch 13 | LR: 0.001 #############
+Train-13 epoch | loss:0.00044041 | acc:0.7827
+##### Epoch 13 | gt mAP: 0.6139678715780372 | rcnn mAP: 0.5924059056503872 #####
+############# Starting Epoch 14 | LR: 0.001 #############
+Train-14 epoch | loss:0.00043493 | acc:0.7868
+############# Starting Epoch 15 | LR: 0.001 #############
+Train-15 epoch | loss:0.00043010 | acc:0.7899
+##### Epoch 15 | gt mAP: 0.6215620809210659 | rcnn mAP: 0.6003364853639909 #####
+############# Starting Epoch 16 | LR: 0.001 #############
+Train-16 epoch | loss:0.00042610 | acc:0.7924
+############# Starting Epoch 17 | LR: 0.001 #############
+Train-17 epoch | loss:0.00042123 | acc:0.7959
+##### Epoch 17 | gt mAP: 0.623170747032345 | rcnn mAP: 0.6029198918610811 #####
+############# Starting Epoch 18 | LR: 0.001 #############
+Train-18 epoch | loss:0.00041901 | acc:0.7980
+############# Starting Epoch 19 | LR: 0.001 #############
+Train-19 epoch | loss:0.00041513 | acc:0.8008
+##### Epoch 19 | gt mAP: 0.633872042939791 | rcnn mAP: 0.6131775664428999 #####
+############# Starting Epoch 20 | LR: 0.001 #############
+Train-20 epoch | loss:0.00041171 | acc:0.8027
+############# Starting Epoch 21 | LR: 0.001 #############
+Train-21 epoch | loss:0.00040912 | acc:0.8048
+##### Epoch 21 | gt mAP: 0.6408568044414582 | rcnn mAP: 0.6187323991956099 #####
+############# Starting Epoch 22 | LR: 0.001 #############
+Train-22 epoch | loss:0.00040591 | acc:0.8072
+############# Starting Epoch 23 | LR: 0.001 #############
+Train-23 epoch | loss:0.00040271 | acc:0.8092
+##### Epoch 23 | gt mAP: 0.6431319145199222 | rcnn mAP: 0.6208732714421321 #####
+############# Starting Epoch 24 | LR: 0.001 #############
+Train-24 epoch | loss:0.00040175 | acc:0.8100
+############# Starting Epoch 25 | LR: 0.001 #############
+Train-25 epoch | loss:0.00039841 | acc:0.8126
+##### Epoch 25 | gt mAP: 0.6466746018977618 | rcnn mAP: 0.6246791505510763 #####
+############# Starting Epoch 26 | LR: 0.001 #############
+Train-26 epoch | loss:0.00039689 | acc:0.8141
+############# Starting Epoch 27 | LR: 0.001 #############
+Train-27 epoch | loss:0.00039423 | acc:0.8157
+##### Epoch 27 | gt mAP: 0.6529748756686246 | rcnn mAP: 0.630557800650828 #####
+############# Starting Epoch 28 | LR: 0.001 #############
+Train-28 epoch | loss:0.00039208 | acc:0.8170
+############# Starting Epoch 29 | LR: 0.001 #############
+Train-29 epoch | loss:0.00039053 | acc:0.8181
+##### Epoch 29 | gt mAP: 0.6492785166663859 | rcnn mAP: 0.6290001840519626 #####
+############# Starting Epoch 30 | LR: 0.001 #############
+Train-30 epoch | loss:0.00038840 | acc:0.8193
+############# Starting Epoch 31 | LR: 0.001 #############
+Train-31 epoch | loss:0.00038702 | acc:0.8208
+##### Epoch 31 | gt mAP: 0.6590673111536546 | rcnn mAP: 0.6352194081505483 #####
+############# Starting Epoch 32 | LR: 0.001 #############
+Train-32 epoch | loss:0.00038573 | acc:0.8217
+############# Starting Epoch 33 | LR: 0.001 #############
+Train-33 epoch | loss:0.00038399 | acc:0.8228
+##### Epoch 33 | gt mAP: 0.6600690310544831 | rcnn mAP: 0.6411433914765825 #####
+############# Starting Epoch 34 | LR: 0.001 #############
+Train-34 epoch | loss:0.00038241 | acc:0.8238
+############# Starting Epoch 35 | LR: 0.001 #############
+Train-35 epoch | loss:0.00038041 | acc:0.8251
+##### Epoch 35 | gt mAP: 0.6590556799954103 | rcnn mAP: 0.6371108880142525 #####
+############# Starting Epoch 36 | LR: 0.001 #############
+Train-36 epoch | loss:0.00037904 | acc:0.8263
+############# Starting Epoch 37 | LR: 0.001 #############
+Train-37 epoch | loss:0.00037816 | acc:0.8268
+##### Epoch 37 | gt mAP: 0.661405916685792 | rcnn mAP: 0.6385150654538837 #####
+############# Starting Epoch 38 | LR: 0.001 #############
+Train-38 epoch | loss:0.00037670 | acc:0.8282
+############# Starting Epoch 39 | LR: 0.001 #############
+Train-39 epoch | loss:0.00037472 | acc:0.8292
+##### Epoch 39 | gt mAP: 0.6635903646392477 | rcnn mAP: 0.6391602801069789 #####
+############# Starting Epoch 40 | LR: 0.001 #############
+Train-40 epoch | loss:0.00037391 | acc:0.8298
+############# Starting Epoch 41 | LR: 0.001 #############
+Train-41 epoch | loss:0.00037224 | acc:0.8310
+##### Epoch 41 | gt mAP: 0.6681120927809149 | rcnn mAP: 0.6440809690686115 #####
+############# Starting Epoch 42 | LR: 0.001 #############
+Train-42 epoch | loss:0.00037229 | acc:0.8314
+############# Starting Epoch 43 | LR: 0.001 #############
+Train-43 epoch | loss:0.00037080 | acc:0.8320
+##### Epoch 43 | gt mAP: 0.672012649947822 | rcnn mAP: 0.6466989123139477 #####
+############# Starting Epoch 44 | LR: 0.001 #############
+Train-44 epoch | loss:0.00036960 | acc:0.8333
+############# Starting Epoch 45 | LR: 0.001 #############
+Train-45 epoch | loss:0.00036852 | acc:0.8337
+##### Epoch 45 | gt mAP: 0.656021192470368 | rcnn mAP: 0.6321440787450588 #####
+############# Starting Epoch 46 | LR: 0.001 #############
+Train-46 epoch | loss:0.00036787 | acc:0.8345
+############# Starting Epoch 47 | LR: 0.001 #############
+Train-47 epoch | loss:0.00036623 | acc:0.8353
+##### Epoch 47 | gt mAP: 0.6685245750180917 | rcnn mAP: 0.6454135629292701 #####
+############# Starting Epoch 48 | LR: 0.001 #############
+Train-48 epoch | loss:0.00036530 | acc:0.8357
+############# Starting Epoch 49 | LR: 0.001 #############
+Train-49 epoch | loss:0.00036423 | acc:0.8368
+##### Epoch 49 | gt mAP: 0.6768686492189819 | rcnn mAP: 0.6511245001528843 #####
+############# Starting Epoch 50 | LR: 0.001 #############
+Train-50 epoch | loss:0.00036328 | acc:0.8377
+############# Starting Epoch 51 | LR: 0.001 #############
+Train-51 epoch | loss:0.00036220 | acc:0.8383
+##### Epoch 51 | gt mAP: 0.6711993267636454 | rcnn mAP: 0.6451930762360725 #####
+############# Starting Epoch 52 | LR: 0.001 #############
+Train-52 epoch | loss:0.00036162 | acc:0.8390
+############# Starting Epoch 53 | LR: 0.001 #############
+Train-53 epoch | loss:0.00036060 | acc:0.8395
+##### Epoch 53 | gt mAP: 0.6796891821912461 | rcnn mAP: 0.6534976904899132 #####
+############# Starting Epoch 54 | LR: 0.001 #############
+Train-54 epoch | loss:0.00036051 | acc:0.8397
+############# Starting Epoch 55 | LR: 0.001 #############
+Train-55 epoch | loss:0.00035980 | acc:0.8398
+##### Epoch 55 | gt mAP: 0.6756426516323865 | rcnn mAP: 0.6522167191393078 #####
+############# Starting Epoch 56 | LR: 0.001 #############
+Train-56 epoch | loss:0.00035919 | acc:0.8403
+############# Starting Epoch 57 | LR: 0.001 #############
+Train-57 epoch | loss:0.00035856 | acc:0.8408
+##### Epoch 57 | gt mAP: 0.6834314927018819 | rcnn mAP: 0.654986984892714 #####
+############# Starting Epoch 58 | LR: 0.001 #############
+Train-58 epoch | loss:0.00035702 | acc:0.8418
+############# Starting Epoch 59 | LR: 0.001 #############
+Train-59 epoch | loss:0.00035709 | acc:0.8416
+##### Epoch 59 | gt mAP: 0.6780392015287117 | rcnn mAP: 0.6527622719274704 #####
+############# Starting Epoch 60 | LR: 0.001 #############
+Train-60 epoch | loss:0.00035518 | acc:0.8432
+############# Starting Epoch 61 | LR: 0.001 #############
+Train-61 epoch | loss:0.00035452 | acc:0.8437
+##### Epoch 61 | gt mAP: 0.6821400550023048 | rcnn mAP: 0.6549727964915932 #####
+############# Starting Epoch 62 | LR: 0.001 #############
+Train-62 epoch | loss:0.00035496 | acc:0.8435
+############# Starting Epoch 63 | LR: 0.001 #############
+Train-63 epoch | loss:0.00035447 | acc:0.8435
+##### Epoch 63 | gt mAP: 0.6868892900416416 | rcnn mAP: 0.6598330238081779 #####
+############# Starting Epoch 64 | LR: 0.001 #############
+Train-64 epoch | loss:0.00035376 | acc:0.8443
+############# Starting Epoch 65 | LR: 0.001 #############
+Train-65 epoch | loss:0.00035248 | acc:0.8452
+##### Epoch 65 | gt mAP: 0.6796269216342659 | rcnn mAP: 0.6542170874970336 #####
+############# Starting Epoch 66 | LR: 0.001 #############
+Train-66 epoch | loss:0.00035197 | acc:0.8455
+############# Starting Epoch 67 | LR: 0.001 #############
+Train-67 epoch | loss:0.00035226 | acc:0.8453
+##### Epoch 67 | gt mAP: 0.6839161156036669 | rcnn mAP: 0.6591802911388136 #####
+############# Starting Epoch 68 | LR: 0.001 #############
+Train-68 epoch | loss:0.00035077 | acc:0.8462
+############# Starting Epoch 69 | LR: 0.001 #############
+Train-69 epoch | loss:0.00035047 | acc:0.8467
+##### Epoch 69 | gt mAP: 0.6816807575326306 | rcnn mAP: 0.6577239970377479 #####
+############# Starting Epoch 70 | LR: 0.001 #############
+Train-70 epoch | loss:0.00035029 | acc:0.8465
+############# Starting Epoch 71 | LR: 0.001 #############
+Train-71 epoch | loss:0.00034931 | acc:0.8474
+##### Epoch 71 | gt mAP: 0.6833411686830637 | rcnn mAP: 0.6592810492694395 #####
+############# Starting Epoch 72 | LR: 0.001 #############
+Train-72 epoch | loss:0.00034940 | acc:0.8474
+############# Starting Epoch 73 | LR: 0.001 #############
+Train-73 epoch | loss:0.00034936 | acc:0.8472
+##### Epoch 73 | gt mAP: 0.6839690372680561 | rcnn mAP: 0.6613637332348836 #####
+############# Starting Epoch 74 | LR: 0.001 #############
+Train-74 epoch | loss:0.00034854 | acc:0.8478
+############# Starting Epoch 75 | LR: 0.001 #############
+Train-75 epoch | loss:0.00034810 | acc:0.8482
+##### Epoch 75 | gt mAP: 0.6876702507816673 | rcnn mAP: 0.6611501643941611 #####
+############# Starting Epoch 76 | LR: 0.001 #############
+Train-76 epoch | loss:0.00034774 | acc:0.8487
+############# Starting Epoch 77 | LR: 0.001 #############
+Train-77 epoch | loss:0.00034688 | acc:0.8493
+##### Epoch 77 | gt mAP: 0.6884180994352378 | rcnn mAP: 0.6637466117185609 #####
+############# Starting Epoch 78 | LR: 0.001 #############
+Train-78 epoch | loss:0.00034636 | acc:0.8495
+############# Starting Epoch 79 | LR: 0.001 #############
+Train-79 epoch | loss:0.00034693 | acc:0.8490
+##### Epoch 79 | gt mAP: 0.6867772225915155 | rcnn mAP: 0.6620442523429317 #####
+############# Starting Epoch 80 | LR: 0.001 #############
+Train-80 epoch | loss:0.00034673 | acc:0.8496
+############# Starting Epoch 81 | LR: 0.001 #############
+Train-81 epoch | loss:0.00034646 | acc:0.8493
+##### Epoch 81 | gt mAP: 0.6847352200874598 | rcnn mAP: 0.6597957738282644 #####
+############# Starting Epoch 82 | LR: 0.001 #############
+Train-82 epoch | loss:0.00034577 | acc:0.8502
+############# Starting Epoch 83 | LR: 0.001 #############
+Train-83 epoch | loss:0.00034587 | acc:0.8497
+##### Epoch 83 | gt mAP: 0.6850675556854555 | rcnn mAP: 0.6641921703790934 #####
+############# Starting Epoch 84 | LR: 0.001 #############
+Train-84 epoch | loss:0.00034441 | acc:0.8512
+############# Starting Epoch 85 | LR: 0.001 #############
+Train-85 epoch | loss:0.00034375 | acc:0.8514
+##### Epoch 85 | gt mAP: 0.6892425357493703 | rcnn mAP: 0.6637537990143062 #####
+############# Starting Epoch 86 | LR: 0.001 #############
+Train-86 epoch | loss:0.00034347 | acc:0.8514
+############# Starting Epoch 87 | LR: 0.001 #############
+Train-87 epoch | loss:0.00034319 | acc:0.8519
+##### Epoch 87 | gt mAP: 0.685320213068776 | rcnn mAP: 0.6640209265622213 #####
+############# Starting Epoch 88 | LR: 0.001 #############
+Train-88 epoch | loss:0.00034293 | acc:0.8518
+############# Starting Epoch 89 | LR: 0.001 #############
+Train-89 epoch | loss:0.00034249 | acc:0.8521
+##### Epoch 89 | gt mAP: 0.6889512957037754 | rcnn mAP: 0.664928260785001 #####
+############# Starting Epoch 90 | LR: 0.0001 #############
+Train-90 epoch | loss:0.00032981 | acc:0.8603
+############# Starting Epoch 91 | LR: 0.0001 #############
+Train-91 epoch | loss:0.00032444 | acc:0.8640
+##### Epoch 91 | gt mAP: 0.7042478521651586 | rcnn mAP: 0.67696441573696 #####
+############# Starting Epoch 92 | LR: 0.0001 #############
+Train-92 epoch | loss:0.00032200 | acc:0.8659
+############# Starting Epoch 93 | LR: 0.0001 #############
+Train-93 epoch | loss:0.00031986 | acc:0.8674
+##### Epoch 93 | gt mAP: 0.7079068705936683 | rcnn mAP: 0.6821989156082878 #####
+############# Starting Epoch 94 | LR: 0.0001 #############
+Train-94 epoch | loss:0.00031858 | acc:0.8682
+############# Starting Epoch 95 | LR: 0.0001 #############
+Train-95 epoch | loss:0.00031763 | acc:0.8686
+##### Epoch 95 | gt mAP: 0.7084508666354324 | rcnn mAP: 0.6828113255091673 #####
+############# Starting Epoch 96 | LR: 0.0001 #############
+Train-96 epoch | loss:0.00031677 | acc:0.8696
+############# Starting Epoch 97 | LR: 0.0001 #############
+Train-97 epoch | loss:0.00031558 | acc:0.8704
+##### Epoch 97 | gt mAP: 0.7094175725599076 | rcnn mAP: 0.683692591554711 #####
+############# Starting Epoch 98 | LR: 0.0001 #############
+Train-98 epoch | loss:0.00031513 | acc:0.8706
+############# Starting Epoch 99 | LR: 0.0001 #############
+Train-99 epoch | loss:0.00031466 | acc:0.8714
+##### Epoch 99 | gt mAP: 0.7081011429579174 | rcnn mAP: 0.6826223465739094 #####
+############# Starting Epoch 100 | LR: 0.0001 #############
+Train-100 epoch | loss:0.00031391 | acc:0.8714
+############# Starting Epoch 101 | LR: 0.0001 #############
+Train-101 epoch | loss:0.00031334 | acc:0.8719
+##### Epoch 101 | gt mAP: 0.7113017011889481 | rcnn mAP: 0.6858563853092439 #####
+############# Starting Epoch 102 | LR: 0.0001 #############
+Train-102 epoch | loss:0.00031227 | acc:0.8728
+############# Starting Epoch 103 | LR: 0.0001 #############
+Train-103 epoch | loss:0.00031167 | acc:0.8734
+##### Epoch 103 | gt mAP: 0.7105078228037933 | rcnn mAP: 0.6860377785393297 #####
+############# Starting Epoch 104 | LR: 0.0001 #############
+Train-104 epoch | loss:0.00031155 | acc:0.8730
+############# Starting Epoch 105 | LR: 0.0001 #############
+Train-105 epoch | loss:0.00031121 | acc:0.8735
+##### Epoch 105 | gt mAP: 0.7105858020463567 | rcnn mAP: 0.6873663266068136 #####
+############# Starting Epoch 106 | LR: 0.0001 #############
+Train-106 epoch | loss:0.00031056 | acc:0.8742
+############# Starting Epoch 107 | LR: 0.0001 #############
+Train-107 epoch | loss:0.00031063 | acc:0.8736
+##### Epoch 107 | gt mAP: 0.7120929176909083 | rcnn mAP: 0.6864074465202471 #####
+############# Starting Epoch 108 | LR: 0.0001 #############
+Train-108 epoch | loss:0.00030999 | acc:0.8742
+############# Starting Epoch 109 | LR: 0.0001 #############
+Train-109 epoch | loss:0.00030947 | acc:0.8749
+##### Epoch 109 | gt mAP: 0.7132636268578795 | rcnn mAP: 0.6859810550713168 #####
+############# Starting Epoch 110 | LR: 0.0001 #############
+Train-110 epoch | loss:0.00030944 | acc:0.8749
+############# Starting Epoch 111 | LR: 0.0001 #############
+Train-111 epoch | loss:0.00030849 | acc:0.8752
+##### Epoch 111 | gt mAP: 0.7126802246294277 | rcnn mAP: 0.6873030995681526 #####
+############# Starting Epoch 112 | LR: 0.0001 #############
+Train-112 epoch | loss:0.00030831 | acc:0.8759
+############# Starting Epoch 113 | LR: 0.0001 #############
+Train-113 epoch | loss:0.00030829 | acc:0.8753
+##### Epoch 113 | gt mAP: 0.7121066429789191 | rcnn mAP: 0.6869287122167471 #####
+############# Starting Epoch 114 | LR: 0.0001 #############
+Train-114 epoch | loss:0.00030796 | acc:0.8760
+############# Starting Epoch 115 | LR: 0.0001 #############
+Train-115 epoch | loss:0.00030730 | acc:0.8762
+##### Epoch 115 | gt mAP: 0.7138503495515878 | rcnn mAP: 0.6859605122491528 #####
+############# Starting Epoch 116 | LR: 0.0001 #############
+Train-116 epoch | loss:0.00030698 | acc:0.8764
+############# Starting Epoch 117 | LR: 0.0001 #############
+Train-117 epoch | loss:0.00030721 | acc:0.8762
+##### Epoch 117 | gt mAP: 0.7099811253385584 | rcnn mAP: 0.687303698867809 #####
+############# Starting Epoch 118 | LR: 0.0001 #############
+Train-118 epoch | loss:0.00030631 | acc:0.8769
+############# Starting Epoch 119 | LR: 0.0001 #############
+Train-119 epoch | loss:0.00030611 | acc:0.8773
+##### Epoch 119 | gt mAP: 0.7121211689174178 | rcnn mAP: 0.6881758110736788 #####
+############# Starting Epoch 120 | LR: 1e-05 #############
+Train-120 epoch | loss:0.00030603 | acc:0.8771
+############# Starting Epoch 121 | LR: 1e-05 #############
+Train-121 epoch | loss:0.00030455 | acc:0.8784
+##### Epoch 121 | gt mAP: 0.713025048236407 | rcnn mAP: 0.6878764162077097 #####
+############# Starting Epoch 122 | LR: 1e-05 #############
+Train-122 epoch | loss:0.00030511 | acc:0.8778
+############# Starting Epoch 123 | LR: 1e-05 #############
+Train-123 epoch | loss:0.00030480 | acc:0.8780
+##### Epoch 123 | gt mAP: 0.7140704214825067 | rcnn mAP: 0.6882882836487991 #####
+############# Starting Epoch 124 | LR: 1e-05 #############
+Train-124 epoch | loss:0.00030456 | acc:0.8782
+############# Starting Epoch 125 | LR: 1e-05 #############
+Train-125 epoch | loss:0.00030465 | acc:0.8781
+##### Epoch 125 | gt mAP: 0.7152137884997501 | rcnn mAP: 0.6882543664251022 #####
+############# Starting Epoch 126 | LR: 1e-05 #############
+Train-126 epoch | loss:0.00030440 | acc:0.8783
+############# Starting Epoch 127 | LR: 1e-05 #############
+Train-127 epoch | loss:0.00030444 | acc:0.8780
+##### Epoch 127 | gt mAP: 0.7147403451869807 | rcnn mAP: 0.6885700840617949 #####
+############# Starting Epoch 128 | LR: 1e-05 #############
+Train-128 epoch | loss:0.00030427 | acc:0.8785
+############# Starting Epoch 129 | LR: 1e-05 #############
+Train-129 epoch | loss:0.00030392 | acc:0.8785
+##### Epoch 129 | gt mAP: 0.7143977292085394 | rcnn mAP: 0.687589393430245 #####
+############# Starting Epoch 130 | LR: 1e-05 #############
+Train-130 epoch | loss:0.00030427 | acc:0.8785
+############# Starting Epoch 131 | LR: 1e-05 #############
+Train-131 epoch | loss:0.00030398 | acc:0.8783
+##### Epoch 131 | gt mAP: 0.7151489140113133 | rcnn mAP: 0.6882128910199296 #####
+############# Starting Epoch 132 | LR: 1e-05 #############
+Train-132 epoch | loss:0.00030428 | acc:0.8783
+############# Starting Epoch 133 | LR: 1e-05 #############
+Train-133 epoch | loss:0.00030392 | acc:0.8788
+##### Epoch 133 | gt mAP: 0.7155694645571835 | rcnn mAP: 0.688051557040022 #####
+############# Starting Epoch 134 | LR: 1e-05 #############
+Train-134 epoch | loss:0.00030400 | acc:0.8785
+############# Starting Epoch 135 | LR: 1e-05 #############
+Train-135 epoch | loss:0.00030388 | acc:0.8787
+##### Epoch 135 | gt mAP: 0.7157234729221034 | rcnn mAP: 0.6892901716469274 #####
+############# Starting Epoch 136 | LR: 1e-05 #############
+Train-136 epoch | loss:0.00030373 | acc:0.8786
+############# Starting Epoch 137 | LR: 1e-05 #############
+Train-137 epoch | loss:0.00030382 | acc:0.8790
+##### Epoch 137 | gt mAP: 0.7149085097345581 | rcnn mAP: 0.6896152723983058 #####
+############# Starting Epoch 138 | LR: 1e-05 #############
+Train-138 epoch | loss:0.00030382 | acc:0.8786
+############# Starting Epoch 139 | LR: 1e-05 #############
+Train-139 epoch | loss:0.00030330 | acc:0.8791
+##### Epoch 139 | gt mAP: 0.715014067958991 | rcnn mAP: 0.689671668474661 #####
+############# Starting Epoch 140 | LR: 1e-05 #############
+Train-140 epoch | loss:0.00030345 | acc:0.8790
+############# Starting Epoch 141 | LR: 0.001 #############
+Train-141 epoch | loss:0.00035342 | acc:0.8416
+##### Epoch 141 | gt mAP: 0.6940039014497021 | rcnn mAP: 0.6686287916211543 #####
+############# Starting Epoch 142 | LR: 0.001 #############
+Train-142 epoch | loss:0.00035775 | acc:0.8383
+############# Starting Epoch 143 | LR: 0.001 #############
+Train-143 epoch | loss:0.00035823 | acc:0.8380
+##### Epoch 143 | gt mAP: 0.6823388492030189 | rcnn mAP: 0.660716149830539 #####
+############# Starting Epoch 144 | LR: 0.001 #############
+Train-144 epoch | loss:0.00035937 | acc:0.8369
+############# Starting Epoch 145 | LR: 0.001 #############
+Train-145 epoch | loss:0.00035892 | acc:0.8373
+##### Epoch 145 | gt mAP: 0.687697274660334 | rcnn mAP: 0.6646681574238292 #####
+############# Starting Epoch 146 | LR: 0.001 #############
+Train-146 epoch | loss:0.00035928 | acc:0.8371
+############# Starting Epoch 147 | LR: 0.001 #############
+Train-147 epoch | loss:0.00036082 | acc:0.8358
+##### Epoch 147 | gt mAP: 0.6877208143291752 | rcnn mAP: 0.6650297650725028 #####
+############# Starting Epoch 148 | LR: 0.001 #############
+Train-148 epoch | loss:0.00036043 | acc:0.8360
+############# Starting Epoch 149 | LR: 0.001 #############
+Train-149 epoch | loss:0.00036060 | acc:0.8358
+##### Epoch 149 | gt mAP: 0.6892593786791108 | rcnn mAP: 0.6627102128676278 #####
+############# Starting Epoch 150 | LR: 0.001 #############
+Train-150 epoch | loss:0.00036031 | acc:0.8364
+############# Starting Epoch 151 | LR: 0.001 #############
+Train-151 epoch | loss:0.00035939 | acc:0.8372
+##### Epoch 151 | gt mAP: 0.6871997717169294 | rcnn mAP: 0.6658294917893359 #####
+############# Starting Epoch 152 | LR: 0.001 #############
+Train-152 epoch | loss:0.00036068 | acc:0.8361
+############# Starting Epoch 153 | LR: 0.001 #############
+Train-153 epoch | loss:0.00035938 | acc:0.8371
+##### Epoch 153 | gt mAP: 0.6848296513707753 | rcnn mAP: 0.661341350768692 #####
+############# Starting Epoch 154 | LR: 0.001 #############
+Train-154 epoch | loss:0.00035967 | acc:0.8361
+############# Starting Epoch 155 | LR: 0.001 #############
+Train-155 epoch | loss:0.00035953 | acc:0.8368
+##### Epoch 155 | gt mAP: 0.6859472841543583 | rcnn mAP: 0.6638218299326749 #####
+############# Starting Epoch 156 | LR: 0.001 #############
+Train-156 epoch | loss:0.00036019 | acc:0.8361
+############# Starting Epoch 157 | LR: 0.001 #############
+Train-157 epoch | loss:0.00035980 | acc:0.8364
+##### Epoch 157 | gt mAP: 0.6875553217114271 | rcnn mAP: 0.6650133565654023 #####
+############# Starting Epoch 158 | LR: 0.001 #############
+Train-158 epoch | loss:0.00036081 | acc:0.8360
+############# Starting Epoch 159 | LR: 0.001 #############
+Train-159 epoch | loss:0.00035946 | acc:0.8371
+##### Epoch 159 | gt mAP: 0.6830540152509896 | rcnn mAP: 0.6560331114425307 #####
+############# Starting Epoch 160 | LR: 0.001 #############
+Train-160 epoch | loss:0.00036001 | acc:0.8360
+############# Starting Epoch 161 | LR: 0.0001 #############
+Train-161 epoch | loss:0.00034767 | acc:0.8447
+##### Epoch 161 | gt mAP: 0.7021942555937182 | rcnn mAP: 0.6769235159118334 #####
+############# Starting Epoch 162 | LR: 0.0001 #############
+Train-162 epoch | loss:0.00034143 | acc:0.8488
+############# Starting Epoch 163 | LR: 0.0001 #############
+Train-163 epoch | loss:0.00033911 | acc:0.8504
+##### Epoch 163 | gt mAP: 0.7048716270229243 | rcnn mAP: 0.6801217542652519 #####
+############# Starting Epoch 164 | LR: 0.0001 #############
+Train-164 epoch | loss:0.00033623 | acc:0.8527
+############# Starting Epoch 165 | LR: 0.0001 #############
+Train-165 epoch | loss:0.00033500 | acc:0.8539
+##### Epoch 165 | gt mAP: 0.7076762727489915 | rcnn mAP: 0.6826197769066776 #####
+############# Starting Epoch 166 | LR: 0.0001 #############
+Train-166 epoch | loss:0.00033350 | acc:0.8546
+############# Starting Epoch 167 | LR: 0.0001 #############
+Train-167 epoch | loss:0.00033338 | acc:0.8548
+##### Epoch 167 | gt mAP: 0.7103249967546822 | rcnn mAP: 0.6843412765733984 #####
+############# Starting Epoch 168 | LR: 0.0001 #############
+Train-168 epoch | loss:0.00033195 | acc:0.8553
+############# Starting Epoch 169 | LR: 0.0001 #############
+Train-169 epoch | loss:0.00033106 | acc:0.8566
+##### Epoch 169 | gt mAP: 0.7117372604432157 | rcnn mAP: 0.6859336474658917 #####
+############# Starting Epoch 170 | LR: 0.0001 #############
+Train-170 epoch | loss:0.00033066 | acc:0.8565
+############# Starting Epoch 171 | LR: 0.0001 #############
+Train-171 epoch | loss:0.00032994 | acc:0.8573
+##### Epoch 171 | gt mAP: 0.7115881285127079 | rcnn mAP: 0.6861509928671473 #####
+############# Starting Epoch 172 | LR: 0.0001 #############
+Train-172 epoch | loss:0.00032929 | acc:0.8575
+############# Starting Epoch 173 | LR: 0.0001 #############
+Train-173 epoch | loss:0.00032861 | acc:0.8583
+##### Epoch 173 | gt mAP: 0.7122682335958798 | rcnn mAP: 0.6884208663588787 #####
+############# Starting Epoch 174 | LR: 0.0001 #############
+Train-174 epoch | loss:0.00032853 | acc:0.8580
+############# Starting Epoch 175 | LR: 0.0001 #############
+Train-175 epoch | loss:0.00032782 | acc:0.8587
+##### Epoch 175 | gt mAP: 0.7129547280334283 | rcnn mAP: 0.6877065380588683 #####
+############# Starting Epoch 176 | LR: 0.0001 #############
+Train-176 epoch | loss:0.00032710 | acc:0.8589
+############# Starting Epoch 177 | LR: 0.0001 #############
+Train-177 epoch | loss:0.00032661 | acc:0.8597
+##### Epoch 177 | gt mAP: 0.71251292749634 | rcnn mAP: 0.689604205247334 #####
+############# Starting Epoch 178 | LR: 0.0001 #############
+Train-178 epoch | loss:0.00032635 | acc:0.8596
+############# Starting Epoch 179 | LR: 0.0001 #############
+Train-179 epoch | loss:0.00032653 | acc:0.8596
+##### Epoch 179 | gt mAP: 0.7134597942226091 | rcnn mAP: 0.6879447322526802 #####
+############# Starting Epoch 180 | LR: 0.0001 #############
+Train-180 epoch | loss:0.00032593 | acc:0.8599
+############# Starting Epoch 181 | LR: 0.0001 #############
+Train-181 epoch | loss:0.00032564 | acc:0.8604
+##### Epoch 181 | gt mAP: 0.7136309493433641 | rcnn mAP: 0.6898353063432247 #####
+############# Starting Epoch 182 | LR: 0.0001 #############
+Train-182 epoch | loss:0.00032497 | acc:0.8609
+############# Starting Epoch 183 | LR: 0.0001 #############
+Train-183 epoch | loss:0.00032514 | acc:0.8606
+##### Epoch 183 | gt mAP: 0.7143113093333905 | rcnn mAP: 0.6901991330482513 #####
+############# Starting Epoch 184 | LR: 0.0001 #############
+Train-184 epoch | loss:0.00032445 | acc:0.8613
+############# Starting Epoch 185 | LR: 0.0001 #############
+Train-185 epoch | loss:0.00032472 | acc:0.8609
+##### Epoch 185 | gt mAP: 0.714966749035083 | rcnn mAP: 0.689748702869402 #####
+############# Starting Epoch 186 | LR: 0.0001 #############
+Train-186 epoch | loss:0.00032497 | acc:0.8606
+############# Starting Epoch 187 | LR: 0.0001 #############
+Train-187 epoch | loss:0.00032359 | acc:0.8618
+##### Epoch 187 | gt mAP: 0.7166219115235717 | rcnn mAP: 0.6913327698383833 #####
+############# Starting Epoch 188 | LR: 0.0001 #############
+Train-188 epoch | loss:0.00032338 | acc:0.8619
+############# Starting Epoch 189 | LR: 0.0001 #############
+Train-189 epoch | loss:0.00032354 | acc:0.8614
+##### Epoch 189 | gt mAP: 0.7159638781803671 | rcnn mAP: 0.6917381418628545 #####
+############# Starting Epoch 190 | LR: 0.0001 #############
+Train-190 epoch | loss:0.00032310 | acc:0.8622
+############# Starting Epoch 191 | LR: 1e-05 #############
+Train-191 epoch | loss:0.00032236 | acc:0.8629
+##### Epoch 191 | gt mAP: 0.7167819460236609 | rcnn mAP: 0.6906530535807512 #####
+############# Starting Epoch 192 | LR: 1e-05 #############
+Train-192 epoch | loss:0.00032222 | acc:0.8625
+############# Starting Epoch 193 | LR: 1e-05 #############
+Train-193 epoch | loss:0.00032185 | acc:0.8631
+##### Epoch 193 | gt mAP: 0.716752002071813 | rcnn mAP: 0.6908374489615736 #####
+############# Starting Epoch 194 | LR: 1e-05 #############
+Train-194 epoch | loss:0.00032164 | acc:0.8629
+############# Starting Epoch 195 | LR: 1e-05 #############
+Train-195 epoch | loss:0.00032173 | acc:0.8628
+##### Epoch 195 | gt mAP: 0.716341459201741 | rcnn mAP: 0.6916356163025116 #####
+############# Starting Epoch 196 | LR: 1e-05 #############
+Train-196 epoch | loss:0.00032073 | acc:0.8639
+############# Starting Epoch 197 | LR: 1e-05 #############
+Train-197 epoch | loss:0.00032094 | acc:0.8636
+##### Epoch 197 | gt mAP: 0.7169934513587894 | rcnn mAP: 0.69030835890997 #####
+############# Starting Epoch 198 | LR: 1e-05 #############
+Train-198 epoch | loss:0.00032166 | acc:0.8631
+############# Starting Epoch 199 | LR: 1e-05 #############
+Train-199 epoch | loss:0.00032082 | acc:0.8639
+##### Epoch 199 | gt mAP: 0.7168056573428407 | rcnn mAP: 0.6903337446241069 #####
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+############# Starting Epoch 0 | LR: 0.001 #############
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+############# Starting Epoch 0 | LR: 0.001 #############
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+############# Starting Epoch 0 | LR: 0.001 #############
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+############# Starting Epoch 0 | LR: 0.001 #############
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+############# Starting Epoch 0 | LR: 0.001 #############
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+############# Starting Epoch 0 | LR: 0.001 #############
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+############# Starting Epoch 0 | LR: 0.001 #############
+Train-0 epoch | loss:0.00082650 | acc:0.4779
+******************************
+Namespace(board=True, cfg='./configs/coco/resnet/256x192_res50_lr1e-3_1x.yaml', debug=False, detector='yolo', device=device(type='cuda', index=0), dist_backend='nccl', dist_url='tcp://192.168.1.214:23345', exp_id='exp_fastpose', gpus=[0], launcher='none', map=True, nThreads=60, rank=-1, snapshot=2, sync=False, work_dir='./exp/exp_fastpose-256x192_res50_lr1e-3_1x.yaml/', world_size=4)
+******************************
+{'DATASET': {'TRAIN': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'train2017', 'ANN': 'annotations/person_keypoints_train2017.json', 'AUG': {'FLIP': True, 'ROT_FACTOR': 40, 'SCALE_FACTOR': 0.3, 'NUM_JOINTS_HALF_BODY': 8, 'PROB_HALF_BODY': -1}}, 'VAL': {'TYPE': 'Mscoco', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'ANN': 'annotations/person_keypoints_val2017.json'}, 'TEST': {'TYPE': 'Mscoco_det', 'ROOT': './data/coco/', 'IMG_PREFIX': 'val2017', 'DET_FILE': './exp/json/test_det_yolo.json', 'ANN': 'annotations/person_keypoints_val2017.json'}}, 'DATA_PRESET': {'TYPE': 'simple', 'SIGMA': 2, 'NUM_JOINTS': 17, 'IMAGE_SIZE': [256, 192], 'HEATMAP_SIZE': [64, 48]}, 'MODEL': {'TYPE': 'FastPose', 'PRETRAINED': '', 'TRY_LOAD': '', 'NUM_DECONV_FILTERS': [256, 256, 256], 'NUM_LAYERS': 50}, 'LOSS': {'TYPE': 'MSELoss'}, 'DETECTOR': {'NAME': 'yolo', 'CONFIG': 'detector/yolo/cfg/yolov3-spp.cfg', 'WEIGHTS': 'detector/yolo/data/yolov3-spp.weights', 'NMS_THRES': 0.6, 'CONFIDENCE': 0.05}, 'TRAIN': {'WORLD_SIZE': 4, 'BATCH_SIZE': 32, 'BEGIN_EPOCH': 0, 'END_EPOCH': 200, 'OPTIMIZER': 'adam', 'LR': 0.001, 'LR_FACTOR': 0.1, 'LR_STEP': [90, 120], 'DPG_MILESTONE': 140, 'DPG_STEP': [20, 50]}, 'FILE_NAME': '256x192_res50_lr1e-3_1x.yaml'}
+******************************
+Create new model
+=> init weights
+############# Starting Epoch 0 | LR: 0.001 #############
+Train-0 epoch | loss:0.00083140 | acc:0.4735
